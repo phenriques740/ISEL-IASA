@@ -5,5 +5,6 @@
 	*Duarte Domingues A45
 	*João Belas 	  A45
 	
-#TODO
-  *Comecar o trabalho (lul)
+#TODO:
+	- Iniciar o trabalho
+  
