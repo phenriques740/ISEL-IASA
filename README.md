@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #Tudo de IASA (JAVA)
 
 ### Trabalhos feitos por:
@@ -8,10 +7,3 @@
 	
 #TODO:
 	- Iniciar o trabalho
-  
-=======
-# ISEL-IASA
-Tudo de IASA
-
-teste
->>>>>>> branch 'master' of https://github.com/eddoasso/ISEL-IASA.git
