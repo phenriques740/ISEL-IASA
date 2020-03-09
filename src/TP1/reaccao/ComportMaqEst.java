@@ -1,16 +1,17 @@
-package TP1.MaquinaEstados;
+package TP1.reaccao;
 
-import TP1.reaccao.Comportamento;
-import TP1.reaccao.Estado;
+import TP1.MaquinaEstados.MaquinaEstados;
 import TP1.reaccao.reaccao_base.Accao;
 import TP1.reaccao.reaccao_base.Estimulo;
 
 public class ComportMaqEst implements Comportamento {
+	private MaquinaEstados<? extends Estimulo> maqEstados;
+
 	public ComportMaqEst() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Estado<Estimulo> getEstado() {
+	public Estado<? extends Estimulo> getEstado() {
 		// TODO
 		return null;
 	}
@@ -20,14 +21,15 @@ public class ComportMaqEst implements Comportamento {
 		return null;
 	}
 
-	public ComportMaqEst comport(Estado<Estimulo> estado, Comportamento comport) {
-		// TODO
-		return null;
-	}
-
 	@Override
 	public Accao activar(Estimulo estimulo) {
 		// TODO fix argumento
 		return null;
 	}
+
+	public ComportMaqEst comport(Estado<? extends Estimulo> estado, Comportamento comport) {
+		// TODO
+		return null;
+	}
+
 }

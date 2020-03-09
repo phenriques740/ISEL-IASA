@@ -11,14 +11,13 @@ public class Estado<EV> {
 		return nome;
 	}
 
-	public Estado<EV> transicao(EV evento, Estado<EV> estado) {
+	public Estado<?> transicao(EV evento, Estado<?> estado) {
 		// TODO
 		return null;
 	}
 
-	public Estado<EV> processar(EV evento) {
+	public Estado<?> processar(EV evento) {
 		// TODO
-
 		return null;
 	}
 
