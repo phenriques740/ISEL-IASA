@@ -1,4 +1,4 @@
-package TP1.Jogo;
+package TP1.Jogo.Ambiente;
 
 public class Ambiente {
 	EventoAmb ultimoEventoAmb;

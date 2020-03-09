@@ -1,5 +1,9 @@
 package TP1.Jogo;
 
+import TP1.Jogo.Ambiente.Ambiente;
+import TP1.Jogo.Ambiente.EventoAmb;
+import TP1.Jogo.Personagem.Personagem;
+
 class Jogo {
 	public static void main(String[] args) {
 		Jogo j = new Jogo();
@@ -20,5 +24,4 @@ class Jogo {
 			e = a.getEvento();
 		} while (e != EventoAmb.TERMINAR);
 	}
-
 }

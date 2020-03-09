@@ -1,7 +1,7 @@
-package TP1.Jogo;
+package TP1.Jogo.Personagem;
 
-import TP1.Jogo.Mecanismos_Reaccao.Accao;
-import TP1.Jogo.Mecanismos_Reaccao.Estimulo;
+import TP1.reaccao.reaccao_base.Accao;
+import TP1.reaccao.reaccao_base.Estimulo;
 
 public class Personagem {
 	public Personagem() {

@@ -1,6 +1,15 @@
-package TP1.Jogo.Mecanismos_Reaccao;
+package TP1.reaccao.reaccao_base;
 
-public class Reaccao {
+import TP1.reaccao.Comportamento;
+
+/**
+ * Esta classe corresponde uma reacao a um estimulo, por exemplo, um susto
+ * corresponde um salto.
+ * 
+ * @author Pedro Henriques
+ *
+ */
+public class Reaccao implements Comportamento {
 	private Estimulo estimulo;
 	private Accao resposta;
 
@@ -15,6 +24,7 @@ public class Reaccao {
 	 * @param e estimulo a avaliar
 	 * @return
 	 */
+
 	public Accao activar(Estimulo e) {
 		return e.equals(estimulo) ? resposta : null;
 	}
