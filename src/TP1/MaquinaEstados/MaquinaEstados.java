@@ -1,8 +1,8 @@
 package TP1.MaquinaEstados;
 
-public class MaquinaEstados<Estimulo> {
-	public MaquinaEstados(Estado estado) {
-
+public class MaquinaEstados<EV> {
+	public MaquinaEstados(Estado<EV> estado) {
+		// TODO fix argumentos
 	}
 
 	public Estado getEstado() {

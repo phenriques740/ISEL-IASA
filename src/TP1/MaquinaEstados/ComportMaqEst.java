@@ -1,6 +1,7 @@
-package TP1.reaccao;
+package TP1.MaquinaEstados;
 
-import TP1.MaquinaEstados.MaquinaEstados;
+import TP1.reaccao.Comportamento;
+import TP1.reaccao.Estado;
 import TP1.reaccao.reaccao_base.Accao;
 import TP1.reaccao.reaccao_base.Estimulo;
 
@@ -14,7 +15,7 @@ public class ComportMaqEst implements Comportamento {
 		return null;
 	}
 
-	protected MaquinaEstados<Estimulo> iniciar() {
+	protected MaquinaEstados<? extends Estimulo> iniciar() {
 		// TODO
 		return null;
 	}
