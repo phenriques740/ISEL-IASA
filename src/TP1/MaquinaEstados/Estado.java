@@ -1,7 +1,10 @@
 package TP1.MaquinaEstados;
 
+import java.util.Map;
+
 public class Estado<EV> {
 	private final String nome;
+	private Map<EV, Estado<EV>> transicoes;
 
 	public Estado(String nome) {
 		this.nome = nome;
@@ -11,12 +14,12 @@ public class Estado<EV> {
 		return nome;
 	}
 
-	public Estado<?> transicao(EV evento, Estado<?> estado) {
-		// TODO
-		return null;
+	public Estado<EV> transicao(EV evento, Estado<EV> estado) {
+		transicoes.put(evento, estado);
+		return this;
 	}
 
-	public Estado<?> processar(EV evento) {
+	public Estado<EV> processar(EV evento) {
 		// TODO
 		return null;
 	}
