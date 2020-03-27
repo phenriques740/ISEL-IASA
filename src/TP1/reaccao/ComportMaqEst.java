@@ -1,5 +1,6 @@
 package TP1.reaccao;
 
+import TP1.MaquinaEstados.Estado;
 import TP1.MaquinaEstados.MaquinaEstados;
 import TP1.reaccao.reaccao_base.Accao;
 import TP1.reaccao.reaccao_base.Estimulo;
@@ -11,7 +12,7 @@ public class ComportMaqEst implements Comportamento {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Estado<? extends Estimulo> getEstado() {
+	public Estado getEstado() {
 		// TODO
 		return null;
 	}
