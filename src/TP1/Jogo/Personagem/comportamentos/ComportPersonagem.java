@@ -5,7 +5,7 @@ import TP1.reaccao.ComportMaqEst;
 import TP1.reaccao.reaccao_base.Estimulo;
 
 public class ComportPersonagem extends ComportMaqEst {
-	protected MaquinaEstados<? extends Estimulo> iniciar() {
+	protected MaquinaEstados<Estimulo> iniciar() {
 		// TODO
 		return null;
 	}

@@ -1,10 +1,11 @@
 package TP1.MaquinaEstados;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Estado<EV> {
 	private final String nome;
-	private Map<EV, Estado<EV>> transicoes;
+	private Map<EV, Estado<EV>> transicoes = new HashMap<EV, Estado<EV>>();
 
 	public Estado(String nome) {
 		this.nome = nome;
@@ -20,8 +21,7 @@ public class Estado<EV> {
 	}
 
 	public Estado<EV> processar(EV evento) {
-		// TODO
-		return null;
+		return transicoes.get(evento);
 	}
 
 	@Override

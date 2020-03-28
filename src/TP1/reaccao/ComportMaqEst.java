@@ -1,26 +1,27 @@
 package TP1.reaccao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import TP1.MaquinaEstados.Estado;
 import TP1.MaquinaEstados.MaquinaEstados;
 import TP1.reaccao.reaccao_base.Accao;
 import TP1.reaccao.reaccao_base.Estimulo;
 
-public class ComportMaqEst implements Comportamento {
-	private MaquinaEstados<? extends Estimulo> maqEstados;
+public abstract class ComportMaqEst implements Comportamento {
+	private MaquinaEstados<Estimulo> maqEstados;
+	private Map<Estado<Estimulo>, Comportamento> comportamentos = new HashMap<Estado<Estimulo>, Comportamento>();
+	private Estado<Estimulo> estado;
 
 	public ComportMaqEst() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Estado getEstado() {
-		// TODO
-		return null;
+	public Estado<Estimulo> getEstado() {
+		return estado;
 	}
 
-	protected MaquinaEstados<? extends Estimulo> iniciar() {
-		// TODO
-		return null;
-	}
+	protected abstract MaquinaEstados<Estimulo> iniciar();
 
 	@Override
 	public Accao activar(Estimulo estimulo) {
@@ -28,9 +29,9 @@ public class ComportMaqEst implements Comportamento {
 		return null;
 	}
 
-	public ComportMaqEst comport(Estado<? extends Estimulo> estado, Comportamento comport) {
+	public ComportMaqEst comport(Estado<Estimulo> estado, Comportamento comport) {
 		// TODO
-		return null;
+		return this;
 	}
 
 }

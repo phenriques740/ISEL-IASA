@@ -5,9 +5,11 @@ import TP1.reaccao.Comportamento;
 
 public class Patrulhar extends ComportHieraq {
 
-	public Patrulhar(Comportamento[] comportamentos) {
+	public Patrulhar() {
 		// TODO
-		super(null);
+		super(new Comportamento[] {
+
+		});
 	}
 
 }

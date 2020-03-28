@@ -1,14 +1,13 @@
 package TP1.MaquinaEstados;
 
 public class MaquinaEstados<EV> {
-	private Estado estado;
+	private Estado<EV> estado;
 
-	public MaquinaEstados(Estado<?> estado) {
-		// TODO fix argumentos
+	public MaquinaEstados(Estado<EV> estado) {
+		this.estado = estado;
 	}
 
 	public Estado<EV> getEstado() {
-		// TODO
 		return estado;
 	}
 
