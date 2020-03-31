@@ -5,10 +5,11 @@ import java.util.Map;
 
 public class Estado<EV> {
 	private final String nome;
-	private Map<EV, Estado<EV>> transicoes = new HashMap<EV, Estado<EV>>();
+	private Map<EV, Estado<EV>> transicoes;
 
 	public Estado(String nome) {
 		this.nome = nome;
+		transicoes = new HashMap<EV, Estado<EV>>();
 	}
 
 	public String getNome() {

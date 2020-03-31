@@ -7,8 +7,7 @@ public enum AccaoAmb implements Accao {
 
 	@Override
 	public void executar() {
-		// TODO Auto-generated method stub
-
+		System.out.printf("Accao : %s\n", this);
 	}
 
 }

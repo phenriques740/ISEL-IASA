@@ -14,8 +14,8 @@ class Jogo {
 	private Ambiente a;
 
 	private void executar() {
-		p = new Personagem();
 		a = new Ambiente();
+		p = new Personagem(a);
 		EventoAmb e;
 
 		do {
