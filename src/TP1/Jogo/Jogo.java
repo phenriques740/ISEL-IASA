@@ -16,12 +16,12 @@ class Jogo {
 	private void executar() {
 		a = new Ambiente();
 		p = new Personagem(a);
-		EventoAmb e;
 
 		do {
-			p.executar();
 			a.evoluir();
-			e = a.getEvento();
-		} while (e != EventoAmb.TERMINAR);
+			p.executar();
+
+		} while (a.getEvento() != EventoAmb.TERMINAR);
+		System.out.println("FIM DO JOGO");
 	}
 }

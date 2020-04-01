@@ -11,16 +11,14 @@ import TP1.reaccao.reaccao_base.Estimulo;
 public abstract class ComportMaqEst implements Comportamento {
 	private MaquinaEstados<Estimulo> maqEstados;
 	private Map<Estado<Estimulo>, Comportamento> comportamentos;
-	private Estado<Estimulo> estado;
 
 	public ComportMaqEst() {
 		comportamentos = new HashMap<Estado<Estimulo>, Comportamento>();
 		maqEstados = iniciar();
-		estado = maqEstados.getEstado();
 	}
 
 	public Estado<Estimulo> getEstado() {
-		return estado;
+		return maqEstados.getEstado();
 	}
 
 	protected abstract MaquinaEstados<Estimulo> iniciar();
@@ -39,8 +37,8 @@ public abstract class ComportMaqEst implements Comportamento {
 	 */
 	@Override
 	public Accao activar(Estimulo estimulo) {
+		maqEstados.processar(estimulo);
 		Comportamento c = comportamentos.get(maqEstados.getEstado());
-		estado = estado.processar(estimulo);
 		return c.activar(estimulo);
 	}
 

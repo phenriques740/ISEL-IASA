@@ -45,6 +45,6 @@ public class Personagem {
 
 	private void mostrar() {
 		// TODO
-		System.out.printf("Estado %s\n", comportamento.getEstado());
+		System.out.println(comportamento.getEstado());
 	}
 }

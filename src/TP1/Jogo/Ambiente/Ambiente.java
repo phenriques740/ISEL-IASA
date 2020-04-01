@@ -11,12 +11,10 @@ public class Ambiente {
 	}
 
 	public void evoluir() {
-		// TODO
-		System.out.println("Ambiente a evoluir");
+		ultimoEventoAmb = gerarEvento();
 	}
 
 	public EventoAmb getEvento() {
-		ultimoEventoAmb = gerarEvento();
 		return ultimoEventoAmb;
 	}
 
