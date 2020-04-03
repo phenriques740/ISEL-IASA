@@ -11,7 +11,6 @@ public class Defender extends ComportHieraq {
 		// TODO
 		super(new Comportamento[]{
 				new Reaccao(EventoAmb.INIMIGO, AccaoAmb.DEFENDER),
-				new Reaccao(EventoAmb.FUGA, AccaoAmb.PATRULHAR)
-		});
+				new Reaccao(EventoAmb.FUGA, null)});
 	}
 }

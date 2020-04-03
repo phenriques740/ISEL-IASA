@@ -13,7 +13,7 @@ public class Inspecionar extends ComportHieraq {
 		super(new Comportamento[]{
 				new Reaccao(EventoAmb.INIMIGO, AccaoAmb.APROXIMAR),
 				new Reaccao(EventoAmb.RUIDO, AccaoAmb.PROCURAR),
-				new Reaccao(EventoAmb.SILENCIO, AccaoAmb.PATRULHAR)});
+				new Reaccao(EventoAmb.SILENCIO, null)});
 	}
 
 }

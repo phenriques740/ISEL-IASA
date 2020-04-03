@@ -37,8 +37,9 @@ public abstract class ComportMaqEst implements Comportamento {
 	 */
 	@Override
 	public Accao activar(Estimulo estimulo) {
-		maqEstados.processar(estimulo);
 		Comportamento c = comportamentos.get(maqEstados.getEstado());
+		maqEstados.processar(estimulo);
+
 		return c.activar(estimulo);
 	}
 

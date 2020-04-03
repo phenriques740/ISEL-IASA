@@ -13,8 +13,8 @@ public class Combater extends ComportHieraq {
 		super(new Comportamento[]{
 				new Reaccao(EventoAmb.INIMIGO, AccaoAmb.ATACAR),
 				new Reaccao(EventoAmb.DERROTA, AccaoAmb.INICIAR),
-				new Reaccao(EventoAmb.VITORIA, AccaoAmb.PATRULHAR),
-				new Reaccao(EventoAmb.FUGA, AccaoAmb.PATRULHAR)});
+				new Reaccao(EventoAmb.VITORIA, null),
+				new Reaccao(EventoAmb.FUGA, null)});
 	}
 
 }
