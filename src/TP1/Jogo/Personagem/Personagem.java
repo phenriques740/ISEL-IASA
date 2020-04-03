@@ -1,9 +1,7 @@
 package TP1.Jogo.Personagem;
 
 import TP1.Jogo.Ambiente.Ambiente;
-import TP1.Jogo.Ambiente.EventoAmb;
 import TP1.Jogo.Personagem.comportamentos.ComportPersonagem;
-import TP1.MaquinaEstados.Estado;
 import TP1.reaccao.reaccao_base.Accao;
 import TP1.reaccao.reaccao_base.Estimulo;
 
