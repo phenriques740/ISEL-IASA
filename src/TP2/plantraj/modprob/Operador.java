@@ -1,4 +1,4 @@
-package TP2.mecanismosProcura;
+package TP2.plantraj.modprob;
 
 public interface Operador {
 	public Estado aplicar(Estado estado);

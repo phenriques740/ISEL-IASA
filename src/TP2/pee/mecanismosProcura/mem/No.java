@@ -1,6 +1,10 @@
-package TP2.mecanismosProcura;
+package TP2.pee.mecanismosProcura.mem;
 
-public class No {
+import TP2.PassoSolucao;
+import TP2.plantraj.modprob.Estado;
+import TP2.plantraj.modprob.Operador;
+
+public class No implements PassoSolucao {
 	private int profundidade = 0;
 	private double custo = 0;
 	private Estado estado;
@@ -12,6 +16,8 @@ public class No {
 	}
 	public No(Estado estado, Operador operador, No antecessor) {
 		this.estado = estado;
+		this.operador = operador;
+		this.antecessor = antecessor;
 	}
 	public Estado getEstado() {
 		return estado;
@@ -25,7 +31,6 @@ public class No {
 	public int getProfundidade() {
 		return profundidade;
 	}
-
 	public double getCusto() {
 		return custo;
 	}

@@ -1,4 +1,4 @@
-package TP2.mecanismosProcura;
+package TP2.plantraj.modprob;
 
 public abstract class Problema {
 	private Estado estadoInicial;

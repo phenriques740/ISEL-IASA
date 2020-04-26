@@ -1,10 +1,9 @@
-package TP2.mecanismosProcura;
+package TP2.plantraj.modprob;
 
 public abstract class Estado {
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Estado) {
-			// TODO arranjar isto
 			return (obj.hashCode() == this.hashCode());
 		}
 		return false;
