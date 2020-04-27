@@ -5,7 +5,7 @@ import TP2.plantraj.modprob.Estado;
 import TP2.plantraj.modprob.Operador;
 
 public class No implements PassoSolucao {
-	private int profundidade = 0;
+	private int profundidade;
 	private double custo = 0;
 	private Estado estado;
 	private Operador operador;
@@ -18,6 +18,16 @@ public class No implements PassoSolucao {
 		this.estado = estado;
 		this.operador = operador;
 		this.antecessor = antecessor;
+
+		if (antecessor == null) {
+			profundidade = 0;
+			custo = 0;
+		} else {
+			profundidade = antecessor.getProfundidade() + 1;
+			custo = antecessor.getCusto()
+					+ operador.custo(antecessor.getEstado(), estado);
+		}
+
 	}
 	public Estado getEstado() {
 		return estado;
