@@ -21,7 +21,6 @@ public class OperadorLigacao implements Operador {
 
 	@Override
 	public double custo(Estado estado, Estado estadoSuc) {
-		// TODO Auto-generated method stub
 		return custoLigacao;
 	}
 

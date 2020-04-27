@@ -5,17 +5,18 @@ import TP2.Procura;
 import TP2.Solucao;
 import TP2.pee.larg.ProcuraLarg;
 import TP2.pee.prof.ProcuraProf;
+import TP2.pee.prof.ProcuraProfIter;
 import TP2.plantraj.modprob.OperadorLigacao;
 import TP2.plantraj.modprob.ProblemaPlanTraj;
 
 public class PlaneadorTrajecto {
 	public static void main(String[] args) {
 		OperadorLigacao[] operadores = definirOperadores();
-		ProblemaPlanTraj problema = new ProblemaPlanTraj("Loc-1", "Loc-0",
+		ProblemaPlanTraj problema = new ProblemaPlanTraj("Loc-0", "Loc-6",
 				operadores);
 
-		Procura mecProcura = new ProcuraLarg();
-		// Procura mecProcura = new ProcuraProf();
+		// Procura mecProcura = new ProcuraLarg();
+		Procura mecProcura = new ProcuraProfIter(2);
 		Solucao solucao = mecProcura.resolver(problema);
 		mostrarTrajeto(solucao);
 
