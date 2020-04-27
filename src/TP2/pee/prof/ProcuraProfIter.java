@@ -5,9 +5,11 @@ import TP2.plantraj.modprob.Problema;
 
 public class ProcuraProfIter extends ProcuraProf {
 	private int incProf;
+	private int profAtual;
 	public ProcuraProfIter(int incProf) {
 		super();
 		setIncProf(incProf);
+		profAtual = incProf;
 	}
 
 	public int getIncProf() {
@@ -18,6 +20,13 @@ public class ProcuraProfIter extends ProcuraProf {
 	}
 
 	public Solucao resolver(Problema problema, int profMax) {
+		while (profAtual < profMax) {
+			Solucao s = super.resolver(problema, profAtual);
+			if (s != null) {
+				return s;
+			}
+			profAtual += getIncProf();
+		}
 		return null;
 	}
 
