@@ -14,6 +14,7 @@ public abstract class ProcuraMelhorPrim<P extends Problema>
 			Comparator<No> {
 
 	protected MemoriaProcura iniciarMemoria() {
+		//TODO
 		return null;
 
 	}

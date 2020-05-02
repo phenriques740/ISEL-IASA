@@ -16,7 +16,7 @@ public class PlaneadorTrajecto {
 				operadores);
 
 		// Procura mecProcura = new ProcuraLarg();
-		Procura mecProcura = new ProcuraProfIter(2);
+		Procura mecProcura = new ProcuraProfIter(1);
 		Solucao solucao = mecProcura.resolver(problema);
 		mostrarTrajeto(solucao);
 
