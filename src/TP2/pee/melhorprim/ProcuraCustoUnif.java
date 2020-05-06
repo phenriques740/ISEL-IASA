@@ -1,5 +1,6 @@
 package TP2.pee.melhorprim;
 
+import TP2.pee.mecanismosProcura.mem.MemoriaPrioridade;
 import TP2.pee.mecanismosProcura.mem.MemoriaProcura;
 import TP2.pee.mecanismosProcura.mem.No;
 import TP2.plantraj.modprob.Problema;
@@ -10,14 +11,12 @@ public class ProcuraCustoUnif extends ProcuraMelhorPrim<Problema>
 
 	@Override
 	protected MemoriaProcura iniciarMemoria() {
-		// TODO Auto-generated method stub
-		return null;
+		return new MemoriaPrioridade(this);
 	}
 
 	@Override
 	protected double f(No no) {
-		// TODO Auto-generated method stub
-		return 0;
+		return no.getCusto();
 	}
 
 }
