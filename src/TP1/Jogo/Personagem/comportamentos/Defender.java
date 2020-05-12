@@ -8,7 +8,6 @@ import TP1.reaccao.reaccao_base.Reaccao;
 
 public class Defender extends ComportHieraq {
 	public Defender() {
-		// TODO
 		super(new Comportamento[]{
 				new Reaccao(EventoAmb.INIMIGO, AccaoAmb.DEFENDER),
 				new Reaccao(EventoAmb.FUGA, null)});

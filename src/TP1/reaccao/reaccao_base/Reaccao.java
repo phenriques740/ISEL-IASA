@@ -28,5 +28,4 @@ public class Reaccao implements Comportamento {
 	public Accao activar(Estimulo e) {
 		return e.equals(estimulo) ? resposta : null;
 	}
-
 }
