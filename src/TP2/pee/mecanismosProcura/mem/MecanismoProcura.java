@@ -8,7 +8,7 @@ import TP2.plantraj.modprob.Problema;
 
 public abstract class MecanismoProcura<P extends Problema> {
 	private MemoriaProcura memoria;
-	private P problema;
+	protected P problema;
 
 	public MecanismoProcura() {
 		memoria = iniciarMemoria();

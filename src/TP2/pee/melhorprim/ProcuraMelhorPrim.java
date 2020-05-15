@@ -3,6 +3,7 @@ package TP2.pee.melhorprim;
 import java.util.Comparator;
 
 import TP2.pee.mecanismosProcura.mem.MecanismoProcura;
+import TP2.pee.mecanismosProcura.mem.MemoriaPrioridade;
 import TP2.pee.mecanismosProcura.mem.MemoriaProcura;
 import TP2.pee.mecanismosProcura.mem.No;
 import TP2.plantraj.modprob.Problema;
@@ -14,9 +15,7 @@ public abstract class ProcuraMelhorPrim<P extends Problema>
 			Comparator<No> {
 
 	protected MemoriaProcura iniciarMemoria() {
-		//TODO
-		return null;
-
+		return new MemoriaPrioridade(this);
 	}
 	public int compare(No o1, No o2) {
 		return Double.compare(f(o1), f(o2));

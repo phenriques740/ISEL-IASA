@@ -4,21 +4,21 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class MemoriaProcura {
-	private Queue<No> fronteira;
-	private LinkedList<No> expandidos;
+	protected Queue<No> fronteira;
+	protected LinkedList<No> explorados;
 
 	public MemoriaProcura(Queue<No> fronteira) {
 		this.fronteira = fronteira;
-		this.expandidos = new LinkedList<No>();
+		this.explorados = new LinkedList<No>();
 	}
 
 	public void limpar() {
 		fronteira.clear();
-		expandidos.clear();
+		explorados.clear();
 	}
 
 	public void inserir(No no) {
-		for (No n : expandidos) {
+		for (No n : explorados) {
 			if (n.getEstado().equals(no.getEstado())) {
 				return;
 			}
@@ -34,7 +34,7 @@ public class MemoriaProcura {
 
 	public No remover() {
 		No n = fronteira.poll();
-		expandidos.add(n);
+		explorados.add(n);
 		return n;
 	}
 

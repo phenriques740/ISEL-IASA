@@ -3,8 +3,6 @@ package TP2.plantraj;
 import TP2.PassoSolucao;
 import TP2.Procura;
 import TP2.Solucao;
-import TP2.pee.larg.ProcuraLarg;
-import TP2.pee.prof.ProcuraProf;
 import TP2.pee.prof.ProcuraProfIter;
 import TP2.plantraj.modprob.OperadorLigacao;
 import TP2.plantraj.modprob.ProblemaPlanTraj;
@@ -12,12 +10,15 @@ import TP2.plantraj.modprob.ProblemaPlanTraj;
 public class PlaneadorTrajecto {
 	public static void main(String[] args) {
 		OperadorLigacao[] operadores = definirOperadores();
+
 		ProblemaPlanTraj problema = new ProblemaPlanTraj("Loc-0", "Loc-6",
 				operadores);
-
 		// Procura mecProcura = new ProcuraLarg();
 		Procura mecProcura = new ProcuraProfIter(1);
 		Solucao solucao = mecProcura.resolver(problema);
+
+		// ProcuraHeur mecProcura = new ProcuraCustoUnif();
+		// Solucao solucao = mecProcura.resolver(problema);
 		mostrarTrajeto(solucao);
 
 	}
