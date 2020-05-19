@@ -6,7 +6,6 @@ import java.util.PriorityQueue;
 public class MemoriaPrioridade extends MemoriaProcura {
 
 	public MemoriaPrioridade(Comparator<No> comparator) {
-		super(new PriorityQueue<No>());
+		super(new PriorityQueue<No>(comparator));
 	}
-
 }

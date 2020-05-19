@@ -30,7 +30,7 @@ public class Percurso implements Solucao {
 
 	@Override
 	public double getCusto() {
-		return percurso.getLast().getCusto();
+		return getDimensao() != 0 ? percurso.getLast().getCusto() : 0;
 	}
 
 	public void juntarInicio(No no) {

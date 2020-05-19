@@ -17,8 +17,10 @@ public abstract class ProcuraMelhorPrim<P extends Problema>
 	protected MemoriaProcura iniciarMemoria() {
 		return new MemoriaPrioridade(this);
 	}
-	public int compare(No o1, No o2) {
-		return Double.compare(f(o1), f(o2));
+
+	@Override
+	public int compare(No n1, No n2) {
+		return Double.compare(f(n1), f(n2));
 	}
 	protected abstract double f(No no);
 }

@@ -9,7 +9,6 @@ public class ProcuraSofrega extends ProcuraMelhorPrim<ProblemaHeur>
 
 	@Override
 	protected double f(No no) {
-		// TODO Auto-generated method stub
 		return problema.heuristica(no.getEstado());
 	}
 

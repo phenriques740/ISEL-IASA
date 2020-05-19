@@ -5,12 +5,9 @@ public class ProblemaPlanTraj extends Problema {
 
 	public ProblemaPlanTraj(String localInicial, String localFinal,
 			OperadorLigacao[] operadores) {
-
 		super(new EstadoLocalidade(localInicial), operadores);
 		this.estadoObjetivo = new EstadoLocalidade(localFinal);
-
 	}
-
 	public boolean objetivo(Estado estado) {
 		return estado.equals(estadoObjetivo);
 	}

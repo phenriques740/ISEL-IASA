@@ -3,8 +3,17 @@ package TP2.plantraj;
 import TP2.PassoSolucao;
 import TP2.Procura;
 import TP2.Solucao;
+import TP2.pee.larg.ProcuraLarg;
+import TP2.pee.melhorprim.ProcuraAA;
+import TP2.pee.melhorprim.ProcuraCustoUnif;
+import TP2.pee.melhorprim.ProcuraHeur;
+import TP2.pee.melhorprim.ProcuraMelhorPrim;
+import TP2.pee.melhorprim.ProcuraSofrega;
+import TP2.pee.prof.ProcuraProf;
 import TP2.pee.prof.ProcuraProfIter;
+import TP2.plantraj.modprob.Estado;
 import TP2.plantraj.modprob.OperadorLigacao;
+import TP2.plantraj.modprob.ProblemaHeur;
 import TP2.plantraj.modprob.ProblemaPlanTraj;
 
 public class PlaneadorTrajecto {
@@ -14,11 +23,12 @@ public class PlaneadorTrajecto {
 		ProblemaPlanTraj problema = new ProblemaPlanTraj("Loc-0", "Loc-6",
 				operadores);
 		// Procura mecProcura = new ProcuraLarg();
-		Procura mecProcura = new ProcuraProfIter(1);
+		// Procura mecProcura = new ProcuraProfIter(3);
+		Procura mecProcura = new ProcuraCustoUnif();
+		// ProcuraHeur mecProcura = new ProcuraAA();
+
 		Solucao solucao = mecProcura.resolver(problema);
 
-		// ProcuraHeur mecProcura = new ProcuraCustoUnif();
-		// Solucao solucao = mecProcura.resolver(problema);
 		mostrarTrajeto(solucao);
 
 	}
