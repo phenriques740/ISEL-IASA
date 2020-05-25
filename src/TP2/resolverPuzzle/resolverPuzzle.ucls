@@ -4,7 +4,7 @@
   router="FAN">  
   <package id="1" language="java" name="TP2.resolverPuzzle" project="IASA" file="/IASA/src/TP2/resolverPuzzle" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="675" width="1301" x="-6" y="-8"/>    
+    <position height="675" width="993" x="-6" y="-8"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="2" language="java" name="TP2.resolverPuzzle.SolucionadorPuzzle" project="IASA" 
