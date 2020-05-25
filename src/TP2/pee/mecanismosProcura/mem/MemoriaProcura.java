@@ -1,15 +1,18 @@
 package TP2.pee.mecanismosProcura.mem;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import TP2.plantraj.modprob.Estado;
+
 public class MemoriaProcura {
 	protected Queue<No> fronteira;
-	protected LinkedList<No> explorados;
+	protected HashMap<Estado, No> explorados;
 
 	public MemoriaProcura(Queue<No> fronteira) {
 		this.fronteira = fronteira;
-		this.explorados = new LinkedList<No>();
+		this.explorados = new HashMap<Estado, No>();
 	}
 
 	public void limpar() {
@@ -18,23 +21,17 @@ public class MemoriaProcura {
 	}
 
 	public void inserir(No no) {
-		for (No n : explorados) {
-			if (n.getEstado().equals(no.getEstado())) {
-				return;
-			}
-		}
+		Estado estado = no.getEstado();
+		No noMemoria = explorados.get(estado);
 
-		for (No n : fronteira) {
-			if (n.getEstado().equals(no.getEstado())) {
-				return;
-			}
+		if (noMemoria == null || no.getCusto() < noMemoria.getCusto()) {
+			fronteira.add(no);
+			explorados.put(estado, no);
 		}
-		fronteira.add(no);
 	}
 
 	public No remover() {
 		No n = fronteira.poll();
-		explorados.add(n);
 		return n;
 	}
 

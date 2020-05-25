@@ -29,5 +29,9 @@ public class ProcuraProfIter extends ProcuraProf {
 		}
 		return null;
 	}
-
+	@Override
+	public String tipoDeProcura() {
+		// TODO Auto-generated method stub
+		return "profundidade iterativa";
+	}
 }

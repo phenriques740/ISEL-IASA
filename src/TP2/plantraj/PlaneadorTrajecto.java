@@ -7,13 +7,10 @@ import TP2.pee.larg.ProcuraLarg;
 import TP2.pee.melhorprim.ProcuraAA;
 import TP2.pee.melhorprim.ProcuraCustoUnif;
 import TP2.pee.melhorprim.ProcuraHeur;
-import TP2.pee.melhorprim.ProcuraMelhorPrim;
 import TP2.pee.melhorprim.ProcuraSofrega;
 import TP2.pee.prof.ProcuraProf;
 import TP2.pee.prof.ProcuraProfIter;
-import TP2.plantraj.modprob.Estado;
 import TP2.plantraj.modprob.OperadorLigacao;
-import TP2.plantraj.modprob.ProblemaHeur;
 import TP2.plantraj.modprob.ProblemaPlanTraj;
 
 public class PlaneadorTrajecto {
@@ -22,15 +19,18 @@ public class PlaneadorTrajecto {
 
 		ProblemaPlanTraj problema = new ProblemaPlanTraj("Loc-0", "Loc-6",
 				operadores);
-		// Procura mecProcura = new ProcuraLarg();
+		Procura mecProcura = new ProcuraLarg();
+		// Procura mecProcura = new ProcuraProf();
 		// Procura mecProcura = new ProcuraProfIter(3);
-		Procura mecProcura = new ProcuraCustoUnif();
-		// ProcuraHeur mecProcura = new ProcuraAA();
+		// Procura mecProcura = new ProcuraCustoUnif();
 
+		// Até aqui funciona, depois já não
+
+		// ProcuraHeur mecProcura = new ProcuraAA();
+		// ProcuraHeur mecProcura = new ProcuraSofrega();
 		Solucao solucao = mecProcura.resolver(problema);
 
 		mostrarTrajeto(solucao);
-
 	}
 	private static OperadorLigacao[] definirOperadores() {
 		OperadorLigacao[] operadores = new OperadorLigacao[11];
@@ -56,6 +56,7 @@ public class PlaneadorTrajecto {
 			for (PassoSolucao p : solucao) {
 				System.out.println(p.getEstado());
 			}
+			System.out.println(solucao.getCusto());
 			return;
 		}
 		System.out.println("Nao há solucao");

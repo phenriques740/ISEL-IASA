@@ -13,4 +13,10 @@ public class ProcuraProf extends MecanismoProcura<Problema> implements Procura {
 		return new MemoriaLIFO();
 	}
 
+	@Override
+	public String tipoDeProcura() {
+		// TODO Auto-generated method stub
+		return "profundidade";
+	}
+
 }

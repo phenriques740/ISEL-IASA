@@ -21,7 +21,9 @@ public class OperadorLigacao implements Operador {
 
 	@Override
 	public double custo(Estado estado, Estado estadoSuc) {
-		return custoLigacao;
+		if (estado.equals(estadoOrigem) && estadoSuc.equals(estadoDestino))
+			return custoLigacao;
+		return 0;
 	}
 
 }

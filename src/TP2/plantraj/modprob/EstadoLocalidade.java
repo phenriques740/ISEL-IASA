@@ -1,7 +1,7 @@
 package TP2.plantraj.modprob;
 
 public class EstadoLocalidade extends Estado {
-	private String localidade;
+	private final String localidade;
 
 	public EstadoLocalidade(String localidade) {
 		this.localidade = localidade;

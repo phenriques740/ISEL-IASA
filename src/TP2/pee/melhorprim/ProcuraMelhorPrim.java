@@ -14,6 +14,7 @@ public abstract class ProcuraMelhorPrim<P extends Problema>
 		implements
 			Comparator<No> {
 
+	@Override
 	protected MemoriaProcura iniciarMemoria() {
 		return new MemoriaPrioridade(this);
 	}

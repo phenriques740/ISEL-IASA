@@ -13,4 +13,9 @@ public class ProcuraLarg extends MecanismoProcura<Problema> implements Procura {
 		return new MemoriaFIFO();
 	}
 
+	@Override
+	public String tipoDeProcura() {
+		return "largura";
+	}
+
 }

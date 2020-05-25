@@ -13,4 +13,9 @@ public class ProcuraCustoUnif extends ProcuraMelhorPrim<Problema>
 		return no.getCusto();
 	}
 
+	@Override
+	public String tipoDeProcura() {
+		return "custo uniforme";
+	}
+
 }
