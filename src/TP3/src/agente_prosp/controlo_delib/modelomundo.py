@@ -1,7 +1,8 @@
 from plan.modeloplan import ModeloPlan
-from psa.util import dirmov
-from psa.elementos import ALVO,OBST
+
 from agente_prosp.controlo_delib.operadormover import OperadorMover
+from psa.elementos import ALVO, OBST
+from psa.util import dirmov
 
 
 class ModeloMundo(ModeloPlan):

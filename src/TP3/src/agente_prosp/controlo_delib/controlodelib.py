@@ -1,7 +1,8 @@
 from agente_prosp.controlo_delib.modelomundo import ModeloMundo
+import psa 
 from psa.elementos import ALVO, OBST
 from psa.util import dist
-import psa 
+
 class ControloDelib:
     def __init__(self,planeador):
         self.planeador=planeador

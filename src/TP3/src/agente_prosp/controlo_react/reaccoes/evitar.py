@@ -1,7 +1,9 @@
 from ecr.reaccao import Reaccao
 from ecr.resposta import Resposta
-from psa.actuador import ESQ,FRT,DIR
+
 from psa.accao import Rodar
+from psa.actuador import ESQ, FRT, DIR
+
 
 class Evitar(Reaccao):
     def gerar_resposta(self,estimulo):

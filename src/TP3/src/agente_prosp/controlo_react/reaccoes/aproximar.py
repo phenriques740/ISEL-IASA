@@ -1,6 +1,7 @@
 from ecr.prioridade import Prioridade
-from psa.actuador import ESQ,DIR,FRT
+
 from agente_prosp.controlo_react.reaccoes.aproximardir import AproximarDir
+from psa.actuador import ESQ, DIR, FRT
 
 
 class Aproximar(Prioridade):

@@ -1,6 +1,7 @@
 from plan.plan_pee.problemaplan import ProblemaPlan
 from plan.planeador import Planeador
 
+
 class PlanPEE(Planeador):
     def __init__(self,mec_pee):
         self.__mec_pee=mec_pee

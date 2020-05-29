@@ -1,5 +1,6 @@
 from ecr.reaccao import Reaccao
 from ecr.resposta import Resposta
+
 from psa.accao import Mover
 
 

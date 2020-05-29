@@ -1,7 +1,9 @@
 from ecr.reaccao import Reaccao
 from ecr.resposta import Resposta
-from psa.actuador import ESQ,DIR,FRT
+
 from psa.accao import Mover
+from psa.actuador import ESQ, DIR, FRT
+
 
 class Contornar(Reaccao):
     def detectar_estimulo(self,percepcao):

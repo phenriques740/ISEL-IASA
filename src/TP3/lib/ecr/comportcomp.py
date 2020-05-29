@@ -1,4 +1,5 @@
 from ecr.comportamento import Comportamento
+
 class ComportComp(Comportamento):
     def __init__(self,comportamentos):
         self.comportamentos=comportamentos

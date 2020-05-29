@@ -1,6 +1,7 @@
 import psa
-from psa.agente import Agente
 from psa.accao import Avancar
+from psa.agente import Agente
+
 
 class AgenteProspector(Agente):
     def __init__(self,controlo):

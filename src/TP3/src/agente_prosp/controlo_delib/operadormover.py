@@ -1,7 +1,8 @@
-from psa.util import mover,dist
-from psa.accao import Mover
 from pee.modprob.operador import Operador
+from psa.accao import Mover
 from psa.elementos import ALVO, VAZIO
+from psa.util import mover, dist
+
 class OperadorMover(Operador):
     def __init__(self,modelo_mundo,ang):
         self.__ang=ang
