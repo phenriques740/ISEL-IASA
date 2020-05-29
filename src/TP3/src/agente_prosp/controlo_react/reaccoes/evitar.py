@@ -1,15 +1,13 @@
 from ecr.reaccao import Reaccao
-from psa.actuador import ESQ, DIR, FRT
+from ecr.resposta import Resposta
+from psa.actuador import ESQ,FRT,DIR
 from psa.accao import Rodar
 
 class Evitar(Reaccao):
-    #percepcao[FRT].obstaculo é booleano -> Estimulo
-    #percepcao[FRT].contacto é booleano
-    #psa.accao -> Rodar
-    #psa.actuador -> ESQ, FRT, DIR
-    #Rodar(ESQ)
-    def detectar_estimulo(percepcao):
-        return percepcao[FRT].obstaculo
+    def gerar_resposta(self,estimulo):
+        accao=Rodar(ESQ)
+        resposta=Resposta(accao)
+        return resposta
 
-    def gerar_resposta(estimulo):
-        pass
+    def detectar_estimulo(self,percepcao):
+        return percepcao[FRT].contacto and percepcao[FRT].obstaculo

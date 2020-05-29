@@ -6,7 +6,7 @@ import TP2.plantraj.modprob.Operador;
 
 public class No implements PassoSolucao {
 	private int profundidade;
-	private double custo = 0;
+	private double custo;
 	private Estado estado;
 	private Operador operador;
 	private No antecessor;

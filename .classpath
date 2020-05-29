@@ -6,10 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/puzzle.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/pedro/OneDrive - Instituto Superior de Engenharia de Lisboa/Semestre 4/IASA/ISEL-IASA/lib/puzzle.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
