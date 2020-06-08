@@ -6,10 +6,11 @@ from psa.actuador import ESQ, FRT, DIR
 
 
 class Evitar(Reaccao):
-    def gerar_resposta(self,estimulo):
-        accao=Rodar(ESQ)
-        resposta=Resposta(accao)
+
+    def gerar_resposta(self, estimulo):
+        accao = Rodar(ESQ)
+        resposta = Resposta(accao)
         return resposta
 
-    def detectar_estimulo(self,percepcao):
+    def detectar_estimulo(self, percepcao):
         return percepcao[FRT].contacto and percepcao[FRT].obstaculo

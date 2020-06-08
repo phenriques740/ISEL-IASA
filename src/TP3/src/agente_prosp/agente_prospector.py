@@ -1,5 +1,4 @@
 import psa
-from psa.accao import Avancar
 from psa.agente import Agente
 
 
@@ -25,4 +24,3 @@ class AgenteProspector(Agente):
             self.actuador.actuar(accao)
         
         
-    
