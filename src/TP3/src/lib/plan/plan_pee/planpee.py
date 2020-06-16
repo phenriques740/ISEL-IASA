@@ -3,25 +3,34 @@ from lib.plan.planeador import Planeador
 
 
 class PlanPEE(Planeador):
-    def __init__(self,mec_pee):
-        self.__mec_pee=mec_pee
+
+    def __init__(self, mec_pee):
+        '''
+        @param mec_pee: Procura
+        '''
+        self.__mec_pee = mec_pee
         self.__plano = []
 
-    def planear(self,modelo_plan,estado_inicial,objetivos):
-        estado_final=objetivos[0]
+    def planear(self, modelo_plan, estado_inicial, objetivos):
+        '''
+        @param modelo_plan: ModeloPlan
+        @param estado_inicial: Estado
+        @param objetivos: List<Estado>
+        '''
+        estado_final = objetivos[0]
         operadores = modelo_plan.operadores()
-        problema_plan=ProblemaPlan(estado_inicial,estado_final,operadores)
-        solucao= self.__mec_pee.resolver(problema_plan)
+        problema_plan = ProblemaPlan(estado_inicial, estado_final, operadores)
+        solucao = self.__mec_pee.resolver(problema_plan)
 
-        if solucao!=None:
-            self.__plano=[passo.operador for passo in solucao[1:]]
+        if solucao != None:
+            self.__plano = [passo.operador for passo in solucao[1:]]
         
-    def obter_accao(self,estado):
+    def obter_accao(self, estado):
         if self.__plano:
             return self.__plano.pop(0)
 
     def plano_pendente(self):
-        return self.__plano
+        return bool(self.__plano)
         
     def terminar_plano(self):
         self.__plano = None

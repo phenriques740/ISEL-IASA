@@ -28,7 +28,6 @@ class Jogo {
 			a.evoluir();
 			p.executar();
 		} while (a.getEvento() != EventoAmb.TERMINAR);
-		
 		System.out.println("FIM DO JOGO");
 	}
 }

@@ -1,5 +1,5 @@
-from ecr.comportamento import Comportamento
-from ecr.resposta import Resposta
+from lib.ecr.comportamento import Comportamento
+from lib.ecr.resposta import Resposta
 from random import choice
 
 from psa.accao import Mover

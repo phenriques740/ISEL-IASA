@@ -21,15 +21,21 @@ class AprendQ(AprendRef):
         self._gama = gama
     
     def aprender(self, s, a, r, sn):
-        mem = self.__mem_aprend
+        '''
+        Guarda em memoria um par de (estado acao) com uma recompensa.
         
-        An = self.__sel_accao.max_acao(sn)
-        maxA = self._mem_aprend.obter(An)
+        @param s : Estado
+        @param a : Accao
+        @param r : double
+        @param sn: Estado
+        '''
+        
+        mem = self._mem_aprend
+        
+        An = self._sel_accao.max_acao(sn)
+        maxA = self._mem_aprend.obter(sn, An)
         Qant = mem.obter(s, a)
         
         q = Qant + self._alfa * (r + self._gama * maxA - Qant)
         mem.atualizar(s, a, q)
-
-
-
 

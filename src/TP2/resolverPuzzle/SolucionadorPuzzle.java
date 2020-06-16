@@ -22,38 +22,105 @@ import puzzle.Puzzle.Movimento;
 public class SolucionadorPuzzle {
 
 	public static void main(String[] args) {
+		int[] argumentos = new int[4];
+
+		if (!(args.length == 3 || (args.length == 4 && args[1].equals("1")))) {
+			throw new IllegalArgumentException(
+					"\nPor favor indique tres inteiros, que correspondem a:"
+							+ "\n\tPuzzle a ser resolvido [0:1]"
+							+ "\n\tMetodos de procura informada? 0-Nao, 1-Sim"
+							+ "\n\tMetodo de procura [0:3]"
+							+ "\n\tSe procura informada, qual? 0-Distancia Manhattan 1-Numero de pecas fora do lugar");
+		}
+
+		for (int i = 0; i < args.length; i++) {
+			argumentos[i] = Integer.parseInt(args[i]);
+		}
+
 		int[][] grelhaSolucao = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
 
 		int[][] arr1 = {{0, 5, 2}, {4, 3, 1}, {7, 8, 6}};
 		int[][] arr2 = {{5, 1, 2}, {3, 0, 4}, {8, 6, 7}};
-
-		System.out.println(Arrays.deepToString(arr2));
 		OperadorPuzzle[] operadores = definirOperadores();
 
-		Puzzle baralhado = new Puzzle(arr1);
 		Puzzle puzzleSolucao = new Puzzle(grelhaSolucao);
-		// ProblemaPuzzle problema = new ProblemaPuzzle(baralhado,
-		// puzzleSolucao,
-		// operadores);
+		Puzzle baralhado;
+		if (argumentos[0] == 0) {
+			baralhado = new Puzzle(arr1);
+		} else if (argumentos[0] == 1) {
+			baralhado = new Puzzle(arr2);
+		} else {
+			throw new IllegalArgumentException(
+					"O digito correspondente a puzzle deve ser 0 ou 1");
+		}
 
-		// ProblemaPuzzle problema = new ProblemaPuzzle(baralhado,
-		// puzzleSolucao,
-		// operadores, MetodoDeProcuraHeuristica.numPecasForaDoLugar);
+		ProblemaPuzzle problema = null;
+		Procura mecProcura = null;
+		ProcuraHeur mecProcuraHeur = null;
 
-		ProblemaPuzzle problema = new ProblemaPuzzle(baralhado, puzzleSolucao,
-				operadores, MetodoDeProcuraHeuristica.distanciaManhattan);
+		if (argumentos[1] == 0) {
+			problema = new ProblemaPuzzle(baralhado, puzzleSolucao, operadores);
+			switch (argumentos[2]) {
+				case 0 :
+					mecProcura = new ProcuraLarg();
+					break;
+				case 1 :
+					mecProcura = new ProcuraProf();
+					break;
+				case 2 :
+					mecProcura = new ProcuraProfIter(10);
+					break;
+				case 3 :
+					mecProcura = new ProcuraCustoUnif();
+					break;
+				default :
+					throw new IllegalArgumentException(
+							"O digito correspondente a metodo de procura, nao informada, deve estar entre 0 e 3");
+			}
+		} else if (argumentos[1] == 1) {
+			switch (argumentos[2]) {
+				case 0 :
+					mecProcuraHeur = new ProcuraSofrega();
+					break;
+				case 1 :
+					mecProcuraHeur = new ProcuraAA();
 
-		// Procura mecProcura = new ProcuraLarg();
-		// Procura mecProcura = new ProcuraProf();
-		// Procura mecProcura = new ProcuraProfIter(10);
-		// Procura mecProcura = new ProcuraCustoUnif();
+					break;
+				default :
+					throw new IllegalArgumentException(
+							"O digito correspondente, a metodo de procura, informada, deve ser 0 ou 1");
+			}
+			switch (argumentos[3]) {
+				case 0 :
+					problema = new ProblemaPuzzle(baralhado, puzzleSolucao,
+							operadores,
+							MetodoDeProcuraHeuristica.numPecasForaDoLugar);
+					break;
+				case 1 :
+					problema = new ProblemaPuzzle(baralhado, puzzleSolucao,
+							operadores,
+							MetodoDeProcuraHeuristica.distanciaManhattan);
+					break;
+				default :
+					throw new IllegalArgumentException(
+							"O digito correspondente, á funcao heuristica, deve ser 0 ou 1");
+			}
+		} else {
+			throw new IllegalArgumentException(
+					"O digito correspondente, ao puzzle, deve ser 0 ou 1");
 
-		ProcuraHeur mecProcura = new ProcuraSofrega();
-		// ProcuraHeur mecProcura = new ProcuraAA();
+		}
 
-		Solucao solucao = mecProcura.resolver(problema, 5000);
+		System.out.println("Puzzle " + baralhado);
+		Solucao solucao;
+		if (argumentos[1] == 0) {
+			solucao = mecProcura.resolver(problema, 5000);
+			System.out.println("Procura " + mecProcura.tipoDeProcura());
+		} else {
+			solucao = mecProcuraHeur.resolver(problema);
+			System.out.println("Procura " + mecProcuraHeur.tipoDeProcura());
+		}
 
-		System.out.println("Procura " + mecProcura.tipoDeProcura());
 		mostrarPassos(solucao);
 	}
 

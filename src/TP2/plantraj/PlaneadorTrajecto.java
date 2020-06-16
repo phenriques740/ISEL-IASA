@@ -15,19 +15,38 @@ import TP2.plantraj.modprob.ProblemaPlanTraj;
 
 public class PlaneadorTrajecto {
 	public static void main(String[] args) {
+		if (args.length != 3) {
+			throw new IllegalArgumentException("Indique 3 inteiros, \n\t"
+					+ "1º entre 0 e 3, que corresponde ao metodo de procura"
+					+ "2º entre 0 e 6, que corresponde á localidade de inicio"
+					+ "3º entre 0 e 6, que corresponde á localidade de destino");
+		}
+
 		OperadorLigacao[] operadores = definirOperadores();
 
-		ProblemaPlanTraj problema = new ProblemaPlanTraj("Loc-0", "Loc-6",
-				operadores);
-		Procura mecProcura = new ProcuraLarg();
-		// Procura mecProcura = new ProcuraProf();
-		// Procura mecProcura = new ProcuraProfIter(3);
-		// Procura mecProcura = new ProcuraCustoUnif();
+		ProblemaPlanTraj problema = new ProblemaPlanTraj("Loc-" + args[1],
+				"Loc-" + args[2], operadores);
+
+		Procura mecProcura = null;
+		switch (args[0]) {
+			case "0" :
+				mecProcura = new ProcuraLarg();
+				break;
+			case "1" :
+				mecProcura = new ProcuraProf();
+				break;
+			case "2" :
+				mecProcura = new ProcuraProfIter(3);
+				break;
+			case "3" :
+				mecProcura = new ProcuraCustoUnif();
+				break;
+			default :
+				throw new IllegalArgumentException(
+						"O digito correspondente a metodo de procura, nao informada, deve estar entre 0 e 3");
+		}
 
 		// Até aqui funciona, depois já não
-
-		// ProcuraHeur mecProcura = new ProcuraAA();
-		// ProcuraHeur mecProcura = new ProcuraSofrega();
 		Solucao solucao = mecProcura.resolver(problema);
 
 		mostrarTrajeto(solucao);
@@ -56,7 +75,8 @@ public class PlaneadorTrajecto {
 			for (PassoSolucao p : solucao) {
 				System.out.println(p.getEstado());
 			}
-			System.out.println(solucao.getCusto());
+			System.out.println("Custo " + solucao.getCusto());
+			System.out.println("Dimensao " + solucao.getDimensao());
 			return;
 		}
 		System.out.println("Nao há solucao");

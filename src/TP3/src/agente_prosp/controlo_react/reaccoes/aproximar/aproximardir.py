@@ -1,5 +1,5 @@
-from ecr.reaccao import Reaccao
-from ecr.resposta import Resposta
+from lib.ecr.reaccao import Reaccao
+from lib.ecr.resposta import Resposta
 
 from psa.accao import Mover
 

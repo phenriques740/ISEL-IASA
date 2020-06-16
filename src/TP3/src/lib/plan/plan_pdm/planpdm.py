@@ -1,8 +1,8 @@
 from lib.pdm.pdm import PDM
 from lib.plan.plan_pdm.modelo_pdm_plan import ModeloPDMPlan
+from lib.plan.planeador import Planeador
 
-
-class PlanPDM(PDM):
+class PlanPDM(Planeador):
 
     def __init__(self):
         '''
@@ -20,13 +20,15 @@ class PlanPDM(PDM):
         self.__utilidade,self.__politica=self.__pdm.resolver(ModeloPDMPlan(modelo_plan,objectivos))
 
     def obter_accao(self, s):
-        # ## obter accao a executar
-        # ## dado o estado s, utlizar o metodo get na politica para returnar o operador
+        '''
+            Obtem a proxima acao a ser executada, dado o estado s
+            @param s: Estado estado atual
+        '''
         if self.__politica:
             return self.__politica.get(s)
     
     def plano_pendente(self):
-        return len(self.__politica) != 0
+        return bool(self.__politica)
         
     def terminar_plano(self):
         self.__politica = {}

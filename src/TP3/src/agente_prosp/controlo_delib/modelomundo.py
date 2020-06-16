@@ -15,21 +15,40 @@ class ModeloMundo(ModeloPlan):
         self.__operadores = [OperadorMover(self, ang) for ang in dirmov()]
 
     def mostrar(self, vis):
+        '''
+        utilizado pela psa
+        '''
         alvos_obst = {k:v for(k, v) in self.__elementos.items()
                     if v in [ALVO, OBST]}
         vis.elementos(alvos_obst)
 
     def estados(self):
+        '''
+        @return: List<Estado>
+        '''
         return self.__estados
 
     @property
     def alterado(self):
+        '''
+        @return: Boolean
+        '''
+        
         return self.__alterado
     
     def obter_elem(self, estado):
+        '''
+        @param estado: Estado
+        @return: Elemento
+        '''
+        
         return self.__elementos.get(estado)
         
     def actualizar(self, percepcao):
+        '''
+        Atualizar o modelo do mundo, consoante a posicao do agente
+        @param percepcao: Percepcao
+        '''
         self.__estado = percepcao.posicao
         if self.__elementos != percepcao.imagem:
             self.__elementos = percepcao.imagem
@@ -39,6 +58,9 @@ class ModeloMundo(ModeloPlan):
             self.__alterado = False
 
     def operadores(self):
+        '''
+        @return: List<Operador>
+        '''
         return self.__operadores
 
     @property
